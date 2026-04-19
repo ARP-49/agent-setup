@@ -20,9 +20,11 @@ You are being invoked as a **sub-agent** to implement exactly ONE task. You are 
 - **Stay in scope.** Only touch files listed in the task spec. Do not refactor unrelated code.
 - **Follow existing patterns.** Read the reference files mentioned in "Implementation Notes" before writing code.
 - **Verify everything.** Run through the task's `## Verify` checklist. Check TypeScript compilation. Check for errors.
-- **Mark complete.** Change `[ ]` to `[x]` for your task in `progress.md`.
+- **Run unit tests.** Execute the full test suite (`pytest`, `npm test`, or project equivalent). All tests must pass before continuing. Do not mark a task done if any test fails.
+- **Mark complete.** Change `[ ]` to `[x]` for your task in `progress.md` — only after tests pass.
 - **Update status.** Set `## Status → Current` to the next pending task (or "All complete").
-- **Report.** State what you did in 1-3 sentences: files touched, build status.
+- **Update README.md if this is the last task.** If all tasks are now `[x]`, update `README.md` to reflect the completed work: new features, commands, structure changes. Only update after pre-commit and tests are both green.
+- **Report.** State what you did in 1-3 sentences: files touched, test result, build status.
 
 ## If Something Is Wrong
 

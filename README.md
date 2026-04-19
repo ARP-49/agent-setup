@@ -47,6 +47,7 @@ All three layers work together through VS Code's built-in Copilot Chat.
     ai-prompt-engineering-safety-best-practices.instructions.md   # Prompt safety + responsible AI
     github-actions-ci-cd-best-practices.instructions.md           # CI/CD pipeline conventions
     python.instructions.md                                        # Python style + testing rules
+    quality-gates.instructions.md                                 # Pre-commit, unit tests, README gate
     taming-copilot.instructions.md                                # Keeps Copilot focused + surgical
   skills/                                         # Layer 3: Multi-step reusable capability workflows
     agentic-eval/                                 #   Iterative evaluation + refinement loops
