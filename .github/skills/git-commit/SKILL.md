@@ -2,7 +2,7 @@
 name: git-commit
 description: 'Execute git commit with conventional commit message analysis, intelligent staging, and message generation. Use when user asks to commit changes, create a git commit, or mentions "/commit". Supports: (1) Auto-detecting type and scope from changes, (2) Generating conventional commit messages from diff, (3) Interactive commit with optional type/scope/description overrides, (4) Intelligent file staging for logical grouping'
 license: MIT
-allowed-tools: Bash
+compatibility: Bash
 ---
 
 # Git Commit with Conventional Commits
@@ -50,32 +50,6 @@ BREAKING CHANGE: `extends` key behavior changed
 ```
 
 ## Workflow
-
-### 0. Quality Gates (mandatory before staging anything)
-
-Run pre-commit checks first. Do not proceed to staging or committing until these pass.
-
-```bash
-# If the project uses the pre-commit framework
-pre-commit run --all-files
-
-# If pre-commit is not installed / configured, run the project's linter/formatter
-# Check package.json scripts, Makefile, or pyproject.toml for the right command
-```
-
-If pre-commit fails: fix every reported issue, then re-run until clean. **Never use `--no-verify`.**
-
-Also confirm all tests pass before committing:
-
-```bash
-# Python
-pytest
-
-# JavaScript / TypeScript
-npm test
-```
-
-Only proceed to staging once both checks are green.
 
 ### 1. Analyze Diff
 

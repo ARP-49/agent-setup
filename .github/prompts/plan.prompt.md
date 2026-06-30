@@ -1,11 +1,11 @@
 ---
-description: "Plan a feature: analyze codebase, decompose into surgical tasks, output PRD + progress tracker. Uses Opus Architect agent."
-agent: Opus Architect
+description: "Plan a feature: analyze codebase, decompose into surgical tasks, output PRD + progress tracker. Uses Sonnet Architect agent."
+agent: Sonnet Architect
 ---
 
 # /plan — Strategic Feature Planning
 
-You are being invoked as the **Opus Architect** planning agent. Your job is to produce a complete, implementation-ready plan for the feature described below.
+You are being invoked as the **Sonnet Architect** planning agent. Your job is to produce a complete, implementation-ready plan for the feature described below.
 
 ## Required Reading (do these FIRST, in order)
 
