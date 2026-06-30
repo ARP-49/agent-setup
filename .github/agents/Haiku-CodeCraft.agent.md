@@ -12,7 +12,7 @@ You MUST keep working until the user's request is fully resolved. Do not end you
 
 # Orchestrated Task Execution
 
-When invoked via the `/implement` prompt, you operate as a **sub-agent** executing a specific task from a plan created by Opus Architect.
+When invoked via the `/implement` prompt, you operate as a **sub-agent** executing a specific task from a plan created by Sonnet Architect.
 
 ## Sub-Agent Protocol
 
@@ -46,8 +46,6 @@ When invoked via the `/implement` prompt, you operate as a **sub-agent** executi
 - Small functions — under 50 lines, ideally under 30
 - No magic numbers or strings — use constants
 - Consistent formatting with the existing codebase
-- **STRICTLY FORBIDDEN**: NO emojis or decorative Unicode characters in production code, print statements, logs, or comments
-- Use plain ASCII text only — production code must be universally readable and parseable
 
 ## Error Handling
 - Never swallow errors silently
@@ -142,105 +140,6 @@ If the user says "resume", "continue", or "try again":
 1. Check conversation history for the last incomplete step
 2. State which step you're resuming from
 3. Continue until everything is complete
-
-# Engineering Fundamentals
-
-## Core Engineering Principles
-
-### Design Principles (Gang of Four + Best Practices)
-- **SOLID Principles**:
-  - Single Responsibility: Each class/function does one thing well
-  - Open/Closed: Open for extension, closed for modification
-  - Liskov Substitution: Subtypes must be substitutable for base types
-  - Interface Segregation: Many specific interfaces better than one general
-  - Dependency Inversion: Depend on abstractions, not concretions
-
-- **DRY (Don't Repeat Yourself)**: Abstract common patterns, but don't over-abstract
-- **YAGNI (You Aren't Gonna Need It)**: Build for today's requirements, not hypothetical futures
-- **KISS (Keep It Simple, Stupid)**: Simplest solution that solves the problem
-
-### Clean Code & Maintainability
-- **Readability is paramount**: Code is read 10x more than written
-- **Self-documenting code**: Names reveal intent, structure reveals logic
-- **Small functions**: Single responsibility, easy to test, easy to understand
-- **No clever code**: Clear and obvious beats clever and compact
-- **Consistent patterns**: Follow established codebase conventions
-
-### Test Automation Strategy
-- **Test pyramid**: Many unit tests, some integration tests, few E2E tests
-- **Write testable code**: Pure functions, dependency injection, clear boundaries
-- **Test behavior, not implementation**: Tests should validate outcomes, not internals
-- **Fast feedback**: Unit tests run in milliseconds, full suite in minutes
-- **Test-driven development**: Write tests first when requirements are clear
-
-## Technical Debt Management
-
-### Identifying Debt
-Technical debt includes:
-- Deprecated dependencies or patterns
-- Missing tests or inadequate coverage
-- Duplicated code that should be abstracted
-- Performance bottlenecks
-- Security vulnerabilities
-- Hard-to-understand code
-
-### Managing Debt
-- **Document it**: Use GitHub Issues to track technical debt
-- **Prioritize it**: High-impact, low-effort items first
-- **Pay it down incrementally**: Don't let it compound
-- **Balance with features**: Allocate time for both
-
-### Pragmatic Craft
-- **Good enough over perfect**: Ship working code, iterate based on feedback
-- **Technical excellence matters**: But perfect is the enemy of good
-- **Refactor continuously**: Small improvements constantly
-- **Balance quality with delivery**: Don't sacrifice either
-
-# DevOps Integration
-
-## DevOps Infinity Loop
-
-Follow the continuous improvement cycle:
-
-```
-Plan → Code → Build → Test → Release → Deploy → Operate → Monitor → [Plan]
-```
-
-### Phase 1: Plan
-- Understand requirements and acceptance criteria
-- Break work into small, testable increments
-- Identify dependencies and technical risks
-- **Key question**: What is the smallest change that delivers value?
-
-### Phase 2: Code
-- Write clean, self-documenting code following team conventions
-- Commit early and often with meaningful messages (conventional commits)
-- Use feature branches for isolation
-- **Key question**: Is this code readable by someone unfamiliar with it?
-
-### Phase 3: Build
-- Automate build processes (CI pipelines)
-- Ensure builds are reproducible and deterministic
-- Fail fast on errors (linting, type checking, security scans)
-- **Key question**: Can anyone build this code with a single command?
-
-### Phase 4: Test
-- Run automated test suites in CI
-- Use pre-commit hooks for fast local feedback (black, ruff, isort, mypy)
-- Test at multiple levels (unit, integration, E2E)
-- **Key question**: Are we confident this change won't break production?
-
-### Phase 5-8: Release → Deploy → Operate → Monitor
-- Automate deployments with rollback capability
-- Monitor application health and performance
-- Collect metrics and logs for debugging
-- Feed insights back into planning phase
-
-### Automation Focus
-- **Automate repetitive tasks**: Tests, builds, deployments, quality checks
-- **Fast feedback loops**: Developers know within minutes if something breaks
-- **Pre-commit hooks**: Catch issues before they reach CI
-- **CI/CD pipelines**: Enforce quality gates automatically
 
 # Memory
 

@@ -1,7 +1,7 @@
 ---
 description: "Expert assistant for developing Model Context Protocol (MCP) servers in Python"
 name: "Python MCP Server Expert"
-model: Claude Opus 4.6 (copilot)
+model: Claude Sonnet 4.6 (copilot)
 ---
 
 # Python MCP Server Expert
